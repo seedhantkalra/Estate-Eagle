@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import Header from '../components/Header'
 import {
   ClerkProvider,
   SignInButton,
@@ -25,7 +25,8 @@ export default function RootLayout({
   return (
       <html lang='en'>
           <ClerkProvider>
-            <body>
+            <body className = "bg-black">
+              <Header/>
               {children}
             </body>
           </ClerkProvider>
