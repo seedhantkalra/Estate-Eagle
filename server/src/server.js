@@ -1,8 +1,11 @@
+require('dotenv').config(); 
 const express = require('express')
 const userInfoRouter = require('./routes/userInfoRoutes')
 const propertyRouter = require('./routes/propertyRoutes')
 
 const app = express()
+
+const PORT = process.env.PORT || 4000
 
 app.use(express.json())
 
@@ -15,6 +18,6 @@ app.use('/api/user-info', userInfoRouter)
 
 app.use('/api/property-info', propertyRouter)
 
-app.listen(4000, () => {
+app.listen(PORT, () => {
     console.log('Connected to Port 4000')
 })
