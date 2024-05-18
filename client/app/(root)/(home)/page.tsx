@@ -2,6 +2,7 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import Navbar from '@/components/Navbar'
+import ListingCard from './listingCard';
 
 interface Address {
     streetNumber: string;
@@ -39,7 +40,7 @@ const Home: React.FC = () => {
 
               if(estateData.ok) {
                 setListings(json.listings);
-                console.log(listings)
+                console.log(json.listings)
               }
         }
 
@@ -49,18 +50,15 @@ const Home: React.FC = () => {
     return (
         <div>
           <Navbar />
-         {listings.length > 0 ? (
-            listings.map((listing) => (
-              <div key={listing.mlsNumber}>
-                <h2>{listing.address.streetNumber} {listing.address.streetName} {listing.address.streetSuffix}</h2>
-                <p>Price: ${listing.listPrice}</p>
-                <p>Bedrooms: {listing.details.numBedrooms}</p>
-                <p>Bathrooms: {listing.details.numBathrooms}</p>
-              </div>
-            ))
-          ) : (
-            <p>Loading listings...</p>
-          )}
+          <div className='grid grid-cols-4'>
+            {listings.length > 0 ? (
+              listings.map((listing) => (
+                <ListingCard key={listing.mlsNumber} listing={listing} />
+              ))
+            ) : (
+              <p>Loading listings...</p>
+            )}
+          </div>
         </div>
       );
 }
