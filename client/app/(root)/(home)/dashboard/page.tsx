@@ -48,9 +48,7 @@ const Home: React.FC = () => {
     }, [])
 
     return (
-        <div className='bg-black'>
-          <Navbar />
-          <div className='grid grid-cols-4 gap-12 m-24'>
+        <div className='grid grid-cols-4 gap-12 m-24'>
             {listings.length > 0 ? (
               listings.map((listing) => (
                 <ListingCard key={listing.mlsNumber} listing={listing} />
@@ -59,7 +57,6 @@ const Home: React.FC = () => {
               <p>Loading listings...</p>
             )}
           </div>
-        </div>
       );
 }
 
