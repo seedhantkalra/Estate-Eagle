@@ -1,0 +1,41 @@
+# Root-level ignores
+.DS_Store
+Thumbs.db
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release/
+
+# Compiled dynamically linked library files
+*.so
+
+# Compiled source files
+*.pyc
+
+
+# Transpiled source
+lib/
+lib-esm/
+
+# Optional eslint cache
+.eslintcache
+
+# Client-side build directories
+client/.next/
+client/out/
+client/node_modules/
+client/build/
+client/.env
+
+# Server-side build directories
+server/build/
+server/node_modules/
+server/.env
