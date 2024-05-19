@@ -6,24 +6,7 @@ import DashboardHeader from '@components/DashboardHeader'
 import Image from 'next/image';
 import EagleIcon from '../../../../images/output-onlinepngtools.png'
 import SearchBar from "./searchBar";
-
-interface Address {
-    streetNumber: string;
-    streetName: string;
-    streetSuffix: string;
-}
-
-interface Details {
-    numBedrooms: string;
-    numBathrooms: string;
-}
-
-interface Listing {
-    mlsNumber: string;
-    listPrice: string;
-    address: Address;
-    details: Details;
-}
+import { v4 as uuidv4 } from 'uuid';
 
 const shuffleArray = (array: string[]) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -34,25 +17,19 @@ const shuffleArray = (array: string[]) => {
 };
 
 const Home: React.FC = () => {
-    const [listings, setListings] = useState<Listing[]>([]);
+    const [listings, setListings] = useState([]);
     const [shuffledImages, setShuffledImages] = useState<string[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            const options = {
-                method: 'GET',
-                headers: {
-                    accept: 'application/json',
-                    'REPLIERS-API-KEY': '2jDW7G5wZCOvrv9DyQzar4uCYmgrbc'
-                }
-            };
 
-            const estateData = await fetch('https://api.repliers.io/listings?listings=true&operator=AND&sortBy=updatedOnDesc&status=A', options);
+            const estateData = await fetch('http://localhost:4000/api/property/');
             const json = await estateData.json();
+            console.log(json)
 
             if (estateData.ok) {
-                setListings(json.listings);
-                console.log(json.listings)
+                setListings(json);
+                console.log(json)
                 setShuffledImages(shuffleArray([...images])); // Shuffle images when listings are fetched
             }
         }
@@ -70,7 +47,7 @@ const Home: React.FC = () => {
         <div className='grid grid-cols-3 gap-12 mx-24 my-5 justify-center'>
             {listings.length > 0 ? (
                 listings.slice(0, shuffledImages.length).map((listing, index) => (
-                    <ListingCard key={listing.mlsNumber} listing={listing} imageSrc={shuffledImages[index]} />
+                    <ListingCard key={uuidv4()} listing={listing} imageSrc={shuffledImages[index]} />
                 ))
             ) : (
                 <div className="fixed -top-10 left-0 w-full h-full flex flex-col items-center justify-center">
