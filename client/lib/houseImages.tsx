@@ -17,7 +17,6 @@ const images =[
     '/houses/house15.jpg'
 ];
 
-// Output the array to the console (for verification)
 console.log(images);
 
 export default images;
