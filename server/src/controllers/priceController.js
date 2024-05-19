@@ -5,7 +5,7 @@ exports.setPrice = async (req, res) => {
     try {
         await nearService.setHousePrice(address, price);
         res.json({ message: 'Price set successfully' });
-    } catch (e) {
+    } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
@@ -15,7 +15,7 @@ exports.getHousePriceHistory = async (req, res) => {
     try {
         const priceHistory = await nearService.getHousePriceHistory(address);
         res.status(200).json({ priceHistory })
-    } catch (e) {
+    } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
@@ -24,7 +24,7 @@ exports.getAllPrices = async (req, res) => {
     try {
         const priceHistory = await nearService.getAllHousePrices();
         res.status(200).json({ priceHistory })
-    } catch (e) {
+    } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
