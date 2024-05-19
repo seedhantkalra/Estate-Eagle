@@ -27,7 +27,7 @@ const ListingCard = ({ listing, imageSrc }: { listing: Listing, imageSrc: string
     return (
       <div className = "items-center justify-center">
         <div className="card rounded-md text-left h-64 bg-smokeGrey">
-            <Image src={imageSrc} alt={`Image of ${listing.address.streetNumber} ${listing.address.streetName}`} width={400} height={400} className="hover:scale-110 transition-transform duration-100 w-full h-full object-cover rounded-md"/>
+            <Image src={imageSrc} alt={`Image of ${listing.address.streetNumber} ${listing.address.streetName}`} width={400} height={400} className="hover:scale-110 transition-transform duration-350 w-full h-full object-cover rounded-md"/>
         </div>
         <div className = "py-3">
             <div className='flex justify-between'>

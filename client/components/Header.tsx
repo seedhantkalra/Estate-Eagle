@@ -12,7 +12,7 @@ const Header = async ({}) => {
       <div className='flex items-cente'>
         <Link href='/'>
           <div className='text-lg font-bold uppercase'>
-            <Image src={EagleIcon} alt="Estate Eagle Logo" width={80} height={80} />
+            <Image src={EagleIcon} className='hover:scale-110 transition-transform duration-500' alt="Estate Eagle Logo" width={80} height={80} />
           </div>
         </Link>
       </div>

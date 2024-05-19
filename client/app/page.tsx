@@ -15,7 +15,7 @@ const Landing = () => {
           </h1>
           <p className = "text-gray-500 justify-center text-2xl m-3">Data-Driven Insights To Find Your Dream Home</p>
           <Link className = "py-10" href="/dashboard">
-            <div className="bg-main hover:bg-gray-300 text-white font-bold py-3 px-4 rounded-full mt-0">
+            <div className="bg-main hover:bg-gray-800 hover:scale-110 transition-transform duration-400 text-white font-bold py-2 px-3 rounded-full mt-0">
               <span className='inline'>Get Started    </span>
               <Image className="items-center inline justify-center" src={GetStarted} alt="Get Started Icon" width={20} height={20}/>
             </div>

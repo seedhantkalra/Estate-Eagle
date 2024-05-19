@@ -5,6 +5,8 @@ import images from '@/lib/houseImages';
 import DashboardHeader from '@components/DashboardHeader'
 import Image from 'next/image';
 import EagleIcon from '../../../../images/output-onlinepngtools.png'
+import SearchBar from "./searchBar";
+
 interface Address {
     streetNumber: string;
     streetName: string;
@@ -60,8 +62,11 @@ const Home: React.FC = () => {
 
     return (
       <div>
-        <DashboardHeader/>
-        <div className='grid grid-cols-3 gap-12 m-24 justify-center'>
+        <DashboardHeader />
+        <div className="flex w-full">
+            <SearchBar />
+        </div>
+        <div className='grid grid-cols-3 gap-12 mx-24 my-10 justify-center'>
             {listings.length > 0 ? (
                 listings.slice(0, shuffledImages.length).map((listing, index) => (
                     <ListingCard key={listing.mlsNumber} listing={listing} imageSrc={shuffledImages[index]} />
