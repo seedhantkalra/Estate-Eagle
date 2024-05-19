@@ -2,7 +2,7 @@
   @tailwind components;
   @tailwind utilities;
 
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Sedan+SC&display=swap');
   @layer base {
     :root {
       --background: 0 0% 100%;
@@ -40,7 +40,7 @@
       padding: 0;
       margin: 0;
       box-sizing: border-box;
-      font-family: "Montserrat", sans-serif;
+      font-family: "Sedan SC", serif;
     }
 
     .dark {
@@ -95,6 +95,33 @@
   background-image: url('../images/pexels-apasaric-325185.jpg');
   background-color: #cccccc00;
   height: 1000px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.one {
+  background-image: url('../images/1.jpeg');
+  background-color: #cccccc00;
+  height:750px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.two {
+  background-image: url('../images/2.jpeg');
+  background-color: #cccccc00;
+  height:750px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.three {
+  background-image: url('../images/3.jpeg');
+  background-color: #cccccc00;
+  height:750px; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */

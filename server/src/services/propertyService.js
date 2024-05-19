@@ -20,7 +20,7 @@ async function deleteProperty(address) {
     return await Listing.delete(address);
 }
 
-module_exports = {
+module.exports = {
     getProperties,
     getPropertyByAddress,
     createProperty,

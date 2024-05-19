@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/auth', authRoutes);
-app.use('/api/pricce', priceRoutes);
+app.use('/api/price', priceRoutes);
 app.use('/api/property', propertyRoutes);
 
 app.use(errorHandler);
