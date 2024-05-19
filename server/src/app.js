@@ -1,12 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 
-const authMiddleware = require('./middleware/authMiddleware');
 const errorHandler = require('./middleware/errorHandler');
 
-const authRoutes = require('./routes/authRoutes');
-const alertRoutes = require('./routes/alertRoutes');
-const blockchainRoutes = require('./routes/blockchainRoutes');
+const authRoutes = require('./routes/authRoutes');;
 const priceRoutes = require('./routes/priceRoutes');
 const propertyRoutes = require('./routes/propertyRoutes');
 
@@ -21,9 +18,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/auth', authRoutes);
-app.use('/api/alert', alertRoutes);
-app.use('/api/blockchain', blockchainRoutes);
-app.use('/api/price', priceRoutes);
+app.use('/api/pricce', priceRoutes);
 app.use('/api/property', propertyRoutes);
 
 app.use(errorHandler);

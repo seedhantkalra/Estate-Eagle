@@ -1,19 +1,12 @@
-const express = require('express')
-const supabase = require('../config/supabaseClient')
-const propertyRouter = express.Router()
+const express = require('express');
+const propertyController = require('../controllers/propertyController');
 
-propertyRouter.get('/', async (req, res) => { 
-    let { data: Listings, error } = await supabase
-        .from('Listings')
-        .select('*')
+const router = express.Router();
 
-    if(error) {
-        return res.status(400).json({error})
-    }
+router.get('/', propertyController.getProperties);
+router.get('/:address', propertController.getPropertyByAddress);
+router.post('/', propertyController.createProperty);
+router.put('/:address', propertyController.updateProperty);
+router.delete('/:address', propertController.deleteProperty);
 
-    console.log(Listings)
-
-    res.status(200).json({ listings: Listings });
-})
-
-module.exports = propertyRouter
+module.exports = router;

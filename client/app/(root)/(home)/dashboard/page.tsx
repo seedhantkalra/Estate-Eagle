@@ -48,7 +48,7 @@ const Home: React.FC = () => {
     }, [])
 
     return (
-        <div className='grid grid-cols-4 gap-12 m-24'>
+        <div className='grid grid-cols-4 gap-12 m-24 bg-white'>
             {listings.length > 0 ? (
               listings.map((listing) => (
                 <ListingCard key={listing.mlsNumber} listing={listing} />
