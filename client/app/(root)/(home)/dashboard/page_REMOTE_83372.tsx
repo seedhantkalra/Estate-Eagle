@@ -64,7 +64,7 @@ const Home: React.FC = () => {
                     <ListingCard key={listing.mlsNumber} listing={listing} imageSrc={shuffledImages[index]} />
                 ))
             ) : (
-                <p>Loading listings...</p>
+                <p className="">Loading listings...</p>
             )}
         </div>
     );
