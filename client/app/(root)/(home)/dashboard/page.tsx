@@ -52,7 +52,7 @@ const Home: React.FC = () => {
 
             if (estateData.ok) {
                 setListings(json.listings);
-                console.log(json.listings);
+                console.log(json.listings)
                 setShuffledImages(shuffleArray([...images])); // Shuffle images when listings are fetched
             }
         }
