@@ -8,11 +8,11 @@ const Header = async ({}) => {
   const { userId } = auth();
 
   return (
-    <nav className='flex items-center justify-between px-6 py-4 mb-5 bg-black'>
+    <nav className='flex items-center justify-between px-6 py-1 bg-white border-b-2 border-main'>
       <div className='flex items-center'>
         <Link href='/'>
           <div className='text-lg font-bold text-white uppercase'>
-            <Image src={EagleIcon} alt="Estate Eagle Logo" width={50} height={50} />
+            <Image src={EagleIcon} alt="Estate Eagle Logo" width={80} height={80} />
           </div>
         </Link>
       </div>
@@ -34,7 +34,7 @@ const Header = async ({}) => {
           </>
         )}
         <div className='ml-auto'>
-          <UserButton afterSignOutUrl='/' />
+          <UserButton afterSignOutUrl='/'/>
         </div>
       </div>
     </nav>
