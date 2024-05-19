@@ -21,13 +21,13 @@ const Header = async ({}) => {
           <>
             <Link
               href='sign-in'
-              className='text-main hover:text-black mr-4'
+              className='hover:scale-105 transition-transform duration-200 text-main hover:text-black mr-4'
             >
               Sign In
             </Link>
             <Link
               href='sign-up'
-              className='text-smokeGrey hover:text-black mr-4 bg-main px-3 py-2 rounded-full'
+              className='hover:scale-105 transition-transform duration-200 text-smokeGrey mr-4 bg-main px-3 py-2 rounded-full m-1'
             >
               Sign Up
             </Link>

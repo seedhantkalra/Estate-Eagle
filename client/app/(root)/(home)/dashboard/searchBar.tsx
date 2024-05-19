@@ -13,7 +13,7 @@ const SearchBar = () => {
       <div className="relative mx-5">
         <button
           onClick={toggleFilters}
-          className="card_input px-5 py-3 border border-gray-300 rounded-full focus:outline-main text-gray-400"
+          className="card_input px-5 py-3 border border-gray-300 rounded-full focus:border-black text-gray-400"
         >
           Filters
         </button>

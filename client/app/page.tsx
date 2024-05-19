@@ -7,8 +7,8 @@ import Header from '../components/Header'
 const Landing = () => {
   return (
     <div>
-      <Header/>
-      <div className="skyline  border-b-2 border-main">
+      <Header />
+      <div className="skyline  border-b-4 border-gray-900">
         <div className = "flex flex-col justify-center items-center h-200 grow py-16">
           <h1 className = "text-main justify-center text-7xl tracking-wider">
             Estate Eagle
@@ -22,12 +22,11 @@ const Landing = () => {
           </Link>
         </div>  
       </div>
-      <div className='px-20 py-20 justify-center items-center '>
-        <h1 className = "text-main flex justify-center text-3xl pb-5">
+      <div className='bg-smokeGrey px-20 py-20 flex flex-row align-middle '>
+        <h1 className = "w-1/2 text-smokeGrey flex justify-center text-3xl pb-5 align-middle">
           About Us
         </h1>
-
-        <p className = "text-gray-400 flex text-xl flex-grow text-center">
+        <p className = "w-2/3 text-gray-400 flex-grow text-center">
         At Estate Eagle, we're dedicated to revolutionizing the way individuals make real estate decisions. 
         Our mission is to empower homebuyers with the knowledge they need to make informed choices in the dynamic housing market.
         Driven by innovation and fueled by our commitment to excellence, we've developed a cutting-edge platform that leverages advanced analytics and predictive modeling to provide unparalleled insights into past, present, and future housing trends.
