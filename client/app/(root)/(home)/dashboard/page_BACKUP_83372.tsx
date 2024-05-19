@@ -58,7 +58,11 @@ const Home: React.FC = () => {
     }, []);
 
     return (
+<<<<<<< HEAD
+        <div className='grid grid-cols-4 gap-12 m-24 bg-white'>
+=======
         <div className='grid grid-cols-3 gap-12 m-24'>
+>>>>>>> 64a729729c245a266823aec4d7a3dff4e67e746a
             {listings.length > 0 ? (
                 listings.slice(0, shuffledImages.length).map((listing, index) => (
                     <ListingCard key={listing.mlsNumber} listing={listing} imageSrc={shuffledImages[index]} />

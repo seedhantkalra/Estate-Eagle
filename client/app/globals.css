@@ -1,7 +1,8 @@
-@tailwind base;
+  @tailwind base;
   @tailwind components;
   @tailwind utilities;
 
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
   @layer base {
     :root {
       --background: 0 0% 100%;
@@ -33,6 +34,13 @@
       --ring: 222.2 84% 4.9%;
 
       --radius: 0.5rem;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Montserrat", sans-serif;
     }
 
     .dark {
@@ -76,5 +84,14 @@
   }
 
 .card {
-  box-shadow: 0px 0px 10px 2px #4dff00;
+  box-shadow: 0.2px 0.2px 7px 0.1px rgba(0, 0, 0, 0.332);
+}
+
+.skyline {
+  background-image: url('../images/pexels-apasaric-325185.jpg');
+  background-color: #cccccc00;
+  height: 1000px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
