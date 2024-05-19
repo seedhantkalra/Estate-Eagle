@@ -1,45 +1,48 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-const SearchBar = () => {
-    const [showFilters, setShowFilters] = useState(false);
+const SearchBar = ({ searchTerm, setSearchTerm, onSearch} : {searchTerm : any, setSearchTerm: any, onSearch : any}) => {
+  const handleInputChange = (event : any) => {
+    setSearchTerm(event.target.value);
+  };
 
-    const toggleFilters = () => {
-        setShowFilters(!showFilters);
-    };
+  const handleSearch = () => {
+    onSearch();
+  };
 
   return (
     <div className="flex items-center mb-4 ml-auto mx-24 my-4 w-2/3">
-      {/* Filters Dropdown */}
-      <div className="relative mx-9">
+      <div className="flex w-full max-w-2xl items-center space-x-2">
+        <input
+          className="flex-1 rounded-md border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none"
+          placeholder="Search..."
+          type="search"
+          value={searchTerm}
+          onChange={handleInputChange}
+        />
         <button
-          onClick={toggleFilters}
-          className="hover:scale-105 focus:scale-105 transition-transform duration-200 card_input px-5 py-3 border border-gray-300 rounded-full focus:border-black text-gray-400"
+          className="rounded-md bg-gray-100 px-3 py-2 text-gray-700 hover:bg-gray-200 focus:outline-none"
+          type="button"
+          onClick={handleSearch}
         >
-          Filters
+          <svg
+            className="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+            />
+          </svg>
+          <span className="sr-only">Search</span>
         </button>
-        {showFilters && (
-          <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg">
-            <ul>
-              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Address</li>
-              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">City</li>
-              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Province</li>
-              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Price &lt</li>
-              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Bedrooms</li>
-              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Bathrooms</li>
-              {/* Add more filter options as needed */}
-            </ul>
-          </div>
-        )}
       </div>
-      {/* Search Bar */}
-      <input
-        type="text"
-        placeholder="Find A Home"
-        className="hover:scale-105 focus:scale-105 transition-transform duration-200 w-2/3 card_input px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:border-main"
-      />
-
     </div>
   );
-}
- 
+};
+
 export default SearchBar;

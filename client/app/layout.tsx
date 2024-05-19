@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Estate Eagle",
   description: "Real Estate Price Tracker",
   icons: {
-    icon: "123.png",
+    icon: '/images/output-onlinepngtools.png',
   },
 };
 
@@ -23,7 +23,13 @@ export default function RootLayout({
 }>) {
   return (
       <html lang='en'>
-          <ClerkProvider>
+          <ClerkProvider
+            appearance={{
+              layout:{
+                logoImageUrl: "../images/output-onlinepngtools.png",
+              }
+            }}
+          >
             <body className = "bg-white">
               {children}
             </body>

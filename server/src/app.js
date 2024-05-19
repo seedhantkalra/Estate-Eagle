@@ -20,6 +20,7 @@ app.use((req, res, next) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/price', priceRoutes);
 app.use('/api/property', propertyRoutes);
+app.use('/api/query', queryRoutes);
 
 app.use(errorHandler);
 
