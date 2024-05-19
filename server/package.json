@@ -15,6 +15,10 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "supabase": "^1.167.4"
+    "express-validator": "^7.1.0",
+    "near-api-js": "^4.0.1",
+    "sequelize": "^6.37.3",
+    "supabase": "^1.167.4",
+    "winston": "^3.13.0"
   }
 }

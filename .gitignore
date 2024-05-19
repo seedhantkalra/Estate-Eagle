@@ -39,3 +39,7 @@ client/.env
 server/build/
 server/node_modules/
 server/.env
+
+# Blockchain
+contracts/node_modules/
+contracts/price-tracker/node_modules/
