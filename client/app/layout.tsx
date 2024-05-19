@@ -4,10 +4,6 @@ import "./globals.css";
 import Header from '../components/Header'
 import {
   ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
 } from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,6 +11,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Estate Eagle",
   description: "Real Estate Price Tracker",
+  icons: {
+    icon: "123.png",
+  },
 };
 
 export default function RootLayout({

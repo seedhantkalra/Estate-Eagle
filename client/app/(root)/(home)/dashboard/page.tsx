@@ -1,11 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import ListingCard from './listingCard';
+import ListingCard from '../../../../components/listingCard';
 import images from '@/lib/houseImages';
 import DashboardHeader from '@components/DashboardHeader'
 import Image from 'next/image';
 import EagleIcon from '../../../../images/output-onlinepngtools.png'
-import SearchBar from "./searchBar";
+import SearchBar from "../../../../components/searchBar";
+import Dialog from "../../../../components/Dialog";
 import { v4 as uuidv4 } from 'uuid';
 
 const shuffleArray = (array: string[]) => {
@@ -19,6 +20,19 @@ const shuffleArray = (array: string[]) => {
 const Home: React.FC = () => {
     const [listings, setListings] = useState([]);
     const [shuffledImages, setShuffledImages] = useState<string[]>([]);
+    const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
+    const [selectedListing, setSelectedListing] = useState<any>(null);
+
+    const handleCardClick = (listing: any) => {
+        console.log(listing);
+        setSelectedListing(listing);
+        setIsDialogOpen(true);
+    };
+
+    const handleCloseDialog = () => {
+        setIsDialogOpen(false);
+        setSelectedListing(null);
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -47,7 +61,12 @@ const Home: React.FC = () => {
         <div className='grid grid-cols-3 gap-12 mx-24 my-5 justify-center'>
             {listings.length > 0 ? (
                 listings.slice(0, shuffledImages.length).map((listing, index) => (
-                    <ListingCard key={uuidv4()} listing={listing} imageSrc={shuffledImages[index]} />
+                    <ListingCard 
+                        key={uuidv4()} 
+                        listing={listing} 
+                        imageSrc={shuffledImages[index]} 
+                        onClick={() => handleCardClick(listing)}
+                    />
                 ))
             ) : (
                 <div className="fixed -top-10 left-0 w-full h-full flex flex-col items-center justify-center">
@@ -57,11 +76,12 @@ const Home: React.FC = () => {
 
             )}
         </div>
+        <Dialog isOpen={isDialogOpen} onClose={handleCloseDialog} listing={selectedListing} />
         {listings.length > 0 && <div className="m-4 mb-9 mx-auto text-center py-3 bg-main hover:scale-105 transition-transform duration-200 text-white font-bold rounded-full w-28">
               <span className='text-center inline'>Show More</span>
         </div>}
         {listings.length > 0 && <footer className="p-1 bg-headerBG">
-            <h1 className='text-center text-sm '>© Geece Chasers 2024</h1>
+            <h1 className='text-center text-sm '>© Geese Chasers 2024</h1>
         </footer> }
       </div>
     );

@@ -20,9 +20,12 @@ const SearchBar = () => {
         {showFilters && (
           <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg">
             <ul>
-              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Filter 1</li>
-              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Filter 2</li>
-              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Filter 3</li>
+              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Address</li>
+              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">City</li>
+              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Province</li>
+              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Price &lt</li>
+              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Bedrooms</li>
+              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Bathrooms</li>
               {/* Add more filter options as needed */}
             </ul>
           </div>
