@@ -1,16 +1,27 @@
-import React from 'react'
+import React from 'react';
+import Link from 'next/link'
+import GetStarted from '../public/GetStarted.svg'
+import Image from 'next/image';
 
 const Landing = () => {
   return (
     <div>
       <div className = "flex flex-col justify-center items-center h-200 grow py-20">
-        <h1 className = "text-white flex justify-center text-6xl pt-10">
+        <h1 className = "text-white flex justify-center text-6xl pt-10 font-semibold">
         Estate Eagle
         </h1>
-        <p className = "flex text-gray-400 justify-center text-2xl pt-20">Expert Insights for Informed Home Buying</p>
+        <p className = "flex text-gray-400 justify-center text-2xl pt-20">Trusted Data-Driven Insights for Informed Home Buying</p>
+        <div className = "flex ">
+        <Link className = " py-5" href="/dashboard">
+          <div className="bg-main hover:bg-gray-400 text-white font-bold py-2 px-4 rounded">
+            <span>Get Started</span>
+            <Image className="items-center flex justify-center" src={GetStarted} alt="Get Started Icon" width={20} height={20}/>
+          </div>
+        </Link>
+        </div>
       </div>
-      <div className = 'px-20 w-10/12 py-20 justify-center items-center '>
-        <h1 className = "text-white flex text-center text-3xl pb-5">
+      <div className = 'px-20 py-20 justify-center items-center '>
+        <h1 className = "text-white flex justify-center text-3xl pb-5">
           About Us
         </h1>
 
