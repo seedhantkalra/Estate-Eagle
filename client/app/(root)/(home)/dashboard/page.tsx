@@ -66,7 +66,8 @@ const Home: React.FC = () => {
         <div className="flex w-full">
             <SearchBar />
         </div>
-        <div className='grid grid-cols-3 gap-12 mx-24 my-10 justify-center'>
+        <h6 className="ml-24 text-gray-500">showing 15 of 13,959 results</h6>
+        <div className='grid grid-cols-3 gap-12 mx-24 my-5 justify-center'>
             {listings.length > 0 ? (
                 listings.slice(0, shuffledImages.length).map((listing, index) => (
                     <ListingCard key={listing.mlsNumber} listing={listing} imageSrc={shuffledImages[index]} />
@@ -79,6 +80,12 @@ const Home: React.FC = () => {
 
             )}
         </div>
+        {listings.length > 0 && <div className="m-4 mb-9 mx-auto text-center py-3 bg-main hover:scale-105 transition-transform duration-200 text-white font-bold rounded-full w-28">
+              <span className='text-center inline'>Show More</span>
+        </div>}
+        {listings.length > 0 && <footer className="p-1 bg-headerBG">
+            <h1 className='text-center text-sm '>© Geece Chasers 2024</h1>
+        </footer> }
       </div>
     );
 }

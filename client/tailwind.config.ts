@@ -19,6 +19,7 @@ const config = {
     },
     extend: {
       colors: {
+        coral: "#FF7F50",
         headerBG: "#bdd2e3",
         main: "#1E2019",
         smokeGrey: "#F2F2F2",

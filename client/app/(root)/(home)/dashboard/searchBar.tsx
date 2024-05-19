@@ -10,10 +10,10 @@ const SearchBar = () => {
   return (
     <div className="flex items-center mb-4 ml-auto mx-24 my-4 w-2/3">
       {/* Filters Dropdown */}
-      <div className="relative mx-5">
+      <div className="relative mx-9">
         <button
           onClick={toggleFilters}
-          className="card_input px-5 py-3 border border-gray-300 rounded-full focus:border-black text-gray-400"
+          className="hover:scale-105 focus:scale-105 transition-transform duration-200 card_input px-5 py-3 border border-gray-300 rounded-full focus:border-black text-gray-400"
         >
           Filters
         </button>
@@ -32,7 +32,7 @@ const SearchBar = () => {
       <input
         type="text"
         placeholder="Find A Home"
-        className="w-2/3 card_input px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:border-main"
+        className="hover:scale-105 focus:scale-105 transition-transform duration-200 w-2/3 card_input px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:border-main"
       />
 
     </div>
