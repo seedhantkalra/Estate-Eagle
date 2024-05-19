@@ -1,9 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Navbar from '@/components/Navbar';
+import Link from 'next/link';
 import ListingCard from './listingCard';
 import images from '@/lib/houseImages';
 import DashboardHeader from '@components/DashboardHeader'
+import { createPortal } from 'react-dom';
 
 interface Address {
     streetNumber: string;
@@ -34,6 +36,16 @@ const shuffleArray = (array: string[]) => {
 const Home: React.FC = () => {
     const [listings, setListings] = useState<Listing[]>([]);
     const [shuffledImages, setShuffledImages] = useState<string[]>([]);
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const handleClickOpenModal = (listing: Listing) => {
+      setModalOpen(true);
+    }
+  
+    const handleClickCloseModal = () => {
+      setModalOpen(false);
+    }
+    console.log(modalOpen)  
 
     useEffect(() => {
         const fetchData = async () => {
@@ -62,16 +74,18 @@ const Home: React.FC = () => {
       <div>
         <DashboardHeader/>
         <div className='grid grid-cols-3 gap-12 m-24'>
-            {listings.length > 0 ? (
-                listings.slice(0, shuffledImages.length).map((listing, index) => (
-                    <ListingCard key={listing.mlsNumber} listing={listing} imageSrc={shuffledImages[index]} />
-                ))
-            ) : (
-                <p>Loading listings...</p>
-            )}
+          {listings.length > 0 ? (
+            listings.slice(0, shuffledImages.length).map((listing, index) => (
+              <Link href="/listings">
+                <ListingCard listing={listing} imageSrc={shuffledImages[index]} />
+              </Link>
+            ))
+          ) : (
+            <p>Loading listings...</p>
+          )}
         </div>
       </div>
     );
-}
+  };
 
 export default Home;

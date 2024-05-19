@@ -25,7 +25,8 @@
       "@components/*": ["components/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*/*.tsx", ".next/types/**/*.ts", "**/*.tsx", "src", "lib", "components"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*/*.tsx", ".next/types/**/*.ts", "**/*.tsx", "src", "lib", "components", "**/**/**/**/*.tsx"],
   "exclude": ["node_modules"]
+
   
 }
