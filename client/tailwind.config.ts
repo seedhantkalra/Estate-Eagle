@@ -20,7 +20,7 @@ const config = {
     extend: {
       colors: {
         headerBG: "#bdd2e3",
-        main: "#6F7E63",
+        main: "#1E2019",
         smokeGrey: "#F2F2F2",
         dashboard:"#EAEAEA",
         border: "hsl(var(--border))",

@@ -25,8 +25,9 @@ const Header = () => {
     <nav className = 'bg-white flex items-center justify-between px-6'>
       <div className='flex items-center'>
         <Link href='/'>
-          <div className='text-lg font-bold uppercase'>
-            <Image src={EagleIcon} alt="Estate Eagle Logo" width={80} height={80} />
+          <div className='flex text-lg font-bold uppercase'>
+            <Image src={EagleIcon} className='hover:scale-110 transition-transform duration-500' alt="Estate Eagle Logo" width={80} height={80} />
+            <h1 className='mt-6 p-1 text-black'>Estate Eagle</h1>
           </div>
         </Link>
       </div>

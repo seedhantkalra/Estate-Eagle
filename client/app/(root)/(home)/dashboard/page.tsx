@@ -5,7 +5,9 @@ import Link from 'next/link';
 import ListingCard from './listingCard';
 import images from '@/lib/houseImages';
 import DashboardHeader from '@components/DashboardHeader'
-import { createPortal } from 'react-dom';
+import Image from 'next/image';
+import EagleIcon from '../../../../images/output-onlinepngtools.png'
+import SearchBar from "./searchBar";
 
 interface Address {
     streetNumber: string;
@@ -72,17 +74,22 @@ const Home: React.FC = () => {
 
     return (
       <div>
-        <DashboardHeader/>
-        <div className='grid grid-cols-3 gap-12 m-24'>
-          {listings.length > 0 ? (
-            listings.slice(0, shuffledImages.length).map((listing, index) => (
-              <Link href="/listings">
-                <ListingCard listing={listing} imageSrc={shuffledImages[index]} />
-              </Link>
-            ))
-          ) : (
-            <p>Loading listings...</p>
-          )}
+        <DashboardHeader />
+        <div className="flex w-full">
+            <SearchBar />
+        </div>
+        <div className='grid grid-cols-3 gap-12 mx-24 my-10 justify-center'>
+            {listings.length > 0 ? (
+                listings.slice(0, shuffledImages.length).map((listing, index) => (
+                    <ListingCard key={listing.mlsNumber} listing={listing} imageSrc={shuffledImages[index]} />
+                ))
+            ) : (
+                <div className="fixed -top-10 left-0 w-full h-full flex flex-col items-center justify-center">
+                    <Image src={EagleIcon} alt="Estate Eagle Logo" width={200} height={200} />
+                    <p className="text-black text-3xl">Loading listings...</p>
+                </div>
+
+            )}
         </div>
       </div>
     );

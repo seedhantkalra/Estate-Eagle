@@ -87,6 +87,10 @@
   box-shadow: 0.2px 0.2px 7px 0.1px rgba(0, 0, 0, 0.332);
 }
 
+.card_input {
+  box-shadow: 0.2px 0.2px 2px 1px rgba(0, 0, 0, 0.131);
+}
+
 .skyline {
   background-image: url('../images/pexels-apasaric-325185.jpg');
   background-color: #cccccc00;
