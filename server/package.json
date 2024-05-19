@@ -12,11 +12,13 @@
   "dependencies": {
     "@clerk/clerk-sdk-node": "^5.0.7",
     "@supabase/supabase-js": "^2.43.2",
+    "axios": "^1.6.8",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-validator": "^7.1.0",
     "near-api-js": "^4.0.1",
+    "openai": "^4.47.1",
     "sequelize": "^6.37.3",
     "supabase": "^1.167.4",
     "winston": "^3.13.0"
