@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from '@/components/Navbar';
 import ListingCard from './listingCard';
 import images from '@/lib/houseImages';
+import DashboardHeader from '@components/DashboardHeader'
 
 interface Address {
     streetNumber: string;
@@ -58,6 +59,8 @@ const Home: React.FC = () => {
     }, []);
 
     return (
+      <div>
+        <DashboardHeader/>
         <div className='grid grid-cols-3 gap-12 m-24'>
             {listings.length > 0 ? (
                 listings.slice(0, shuffledImages.length).map((listing, index) => (
@@ -67,6 +70,7 @@ const Home: React.FC = () => {
                 <p>Loading listings...</p>
             )}
         </div>
+      </div>
     );
 }
 

@@ -21,10 +21,11 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@lib/*": ["lib/*"]
+      "@lib/*": ["lib/*"],
+      "@components/*": ["components/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*/*.tsx", ".next/types/**/*.ts", "**/*.tsx", "src", "lib"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*/*.tsx", ".next/types/**/*.ts", "**/*.tsx", "src", "lib", "components"],
   "exclude": ["node_modules"]
   
 }

@@ -2,10 +2,12 @@ import React from 'react';
 import Link from 'next/link'
 import GetStarted from '../public/GetStarted.svg'
 import Image from 'next/image';
+import Header from '../components/Header'
 
 const Landing = () => {
   return (
     <div>
+      <Header/>
       <div className="skyline  border-b-2 border-main">
         <div className = "flex flex-col justify-center items-center h-200 grow py-16">
           <h1 className = "text-main justify-center text-7xl tracking-wider">
