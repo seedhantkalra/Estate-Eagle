@@ -89,10 +89,9 @@
 
 .skyline {
   background-image: url('../images/pexels-apasaric-325185.jpg');
-  background-color: #cccccc51;
+  background-color: #cccccc00;
   height: 1000px; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
-
 }
